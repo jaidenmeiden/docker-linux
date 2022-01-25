@@ -17,6 +17,9 @@ RUN apt update
 RUN apt install -y nginx php-fpm supervisor && \
     rm -rf /var/lib/apt/lists/* && \
     apt clean
+
+# Activate shell
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
     
 # Define the ENV variable
 ENV nginx_vhost /etc/nginx/sites-available/default

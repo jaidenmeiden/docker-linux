@@ -15,7 +15,11 @@ RUN apt-get update
 # Install nginx, php-fpm and supervisord from debian repository
 # https://packages.debian.org/search?keywords=php-fpm
 RUN apt-get install -y locales nginx php-fpm supervisor && rm -rf /var/lib/apt/lists/* \
-    && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
+    && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8 \
+    && apt-get clean
+
+# Activate shell
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
     
 # Define the ENV variable
 ENV LANG en_US.utf8

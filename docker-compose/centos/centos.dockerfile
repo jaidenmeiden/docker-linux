@@ -27,6 +27,9 @@ RUN yum -y install php php-bcmath php-cli php-common php-gd php-intl php-json ph
 
 RUN yum clean all
 
+# Activate shell
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+
 # Update Apache Configuration
 RUN sed -E -i -e '/<Directory "\/var\/www\/html">/,/<\/Directory>/s/AllowOverride None/AllowOverride All/' /etc/httpd/conf/httpd.conf
 RUN sed -E -i -e 's/DirectoryIndex (.*)$/DirectoryIndex index.php \1/g' /etc/httpd/conf/httpd.conf

@@ -15,7 +15,7 @@ services:
     tty: true
 
   debian:
-    container_name: "${APP_NAME}_devian"
+    container_name: "${APP_NAME}_debian"
     ports:
       - 8091:${APP_HTTP_PORT}
       - 8092:${APP_HTTPS_PORT}
