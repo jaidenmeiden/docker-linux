@@ -10,17 +10,17 @@ LABEL description="This is custom Docker Image for the PHP-FPM and Nginx Service
 # ARG DEBIAN_FRONTEND=noninteractive
 
 # Update Debian Software repository
-RUN apt-get update && apt-get install -y locales && rm -rf /var/lib/apt/lists/* \
-    && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
+RUN apt-get update
 
-# Install nginx, php-fpm and supervisord from ubuntu repository
-RUN apt-get install -y nginx php-fpm supervisor && \
-    apt-get clean
+# Install nginx, php-fpm and supervisord from debian repository
+# https://packages.debian.org/search?keywords=php-fpm
+RUN apt-get install -y locales nginx php-fpm supervisor && rm -rf /var/lib/apt/lists/* \
+    && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
     
 # Define the ENV variable
 ENV LANG en_US.utf8
 ENV nginx_vhost /etc/nginx/sites-available/default
-ENV php_conf /etc/php/7.4/fpm/php.ini
+ENV php_conf /etc/php/7.0/fpm/php.ini
 ENV nginx_conf /etc/nginx/nginx.conf
 ENV supervisor_conf /etc/supervisor/supervisord.conf
 
