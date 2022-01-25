@@ -1,5 +1,5 @@
-# Download base image Ubuntu 20.04
-FROM ubuntu:20.04
+# Download base image Debian Stretch
+FROM debian:stretch
 
 # LABEL about the custom image
 LABEL maintainer="jaidenmeiden@gmail.com"
@@ -9,15 +9,16 @@ LABEL description="This is custom Docker Image for the PHP-FPM and Nginx Service
 # Disable Prompt During Packages Installation
 # ARG DEBIAN_FRONTEND=noninteractive
 
-# Update Ubuntu Software repository
-RUN apt update
+# Update Debian Software repository
+RUN apt-get update && apt-get install -y locales && rm -rf /var/lib/apt/lists/* \
+    && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
 
 # Install nginx, php-fpm and supervisord from ubuntu repository
-RUN apt install -y nginx php-fpm supervisor && \
-    rm -rf /var/lib/apt/lists/* && \
-    apt clean
+RUN apt-get install -y nginx php-fpm supervisor && \
+    apt-get clean
     
 # Define the ENV variable
+ENV LANG en_US.utf8
 ENV nginx_vhost /etc/nginx/sites-available/default
 ENV php_conf /etc/php/7.4/fpm/php.ini
 ENV nginx_conf /etc/nginx/nginx.conf
