@@ -13,6 +13,7 @@ LABEL description="This is custom Docker Image for the PHP-FPM and Nginx Service
 RUN apt update
 
 # Install nginx, php-fpm and supervisord from ubuntu repository
+# https://packages.debian.org/search?keywords=php-fpm
 RUN apt install -y nginx php-fpm supervisor && \
     rm -rf /var/lib/apt/lists/* && \
     apt clean
