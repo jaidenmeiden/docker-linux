@@ -37,6 +37,11 @@ $ apt install man
 
 ```bash
 
+# The 'unminimize' command will install the standard Ubuntu Server packages 
+# if you want to convert a Minimal instance to a standard Server environment 
+# for interactive use.
+$ unminimize
+
 # Read files
 $ cat <file_name> # Short files
 $ less <file_name> # Long files
