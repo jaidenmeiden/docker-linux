@@ -1,17 +1,4 @@
-# Ubuntu
-
-This system has been minimized by removing packages and content that are
-not required on a system that users do not log into.
-
-This script restores content and packages that are found on a default   
-Ubuntu server system in order to make this system more suitable for     
-interactive use.
-
-Reinstallation of packages may fail due to changes to the system        
-configuration, the presence of third-party packages, or for other       
-reasons.
-
-This operation may take some time.
+# Ubuntu Image
 
 ## Configuration
 
@@ -33,7 +20,7 @@ $ apt install man
 
 ```
 
-## Commands
+## Useful Commands
 
 ```bash
 
@@ -59,6 +46,27 @@ $ head -n<rows_number> | sort -r # Inverse order
 # Man is a Unix systems tool used to document and
 # learn about commands, files, system calls, etc.
 $ man <command_name>
+
+```
+
+## Permissions (r || w || x)
+
+```bash
+# Values are used for permissions and the sum define specific permission
+# r => 4
+# w => 2
+# x => 1
+# - => 0
+
+$ chmod u+x <file_name> # User (Add permissions)
+$ chmod u-w <file_name> # User (Remove permissions)
+$ chmod g+x <file_name> # Group
+$ chmod o+x <file_name> # Others
+$ chmod a+x <file_name> # all
+
+# Assign file or directory to specific user and group
+$ sudo chmod root:root <file_name>
+$ sudo chmod root: <file_name> # Short command version
 
 ```
 
