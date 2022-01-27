@@ -1,6 +1,6 @@
 # Ubuntu Image
 
-## Configuration
+## Additional Configuration
 
 ```Dockerfile
 
@@ -9,14 +9,42 @@
 # for interactive use.
 RUN yes | unminimize
 
+# Change the root password
+RUN echo 'root:Docker!' | chpasswd
+# Or
+RUN echo 'Docker!' | passwd --stdin root 
+
+# Install the ssh server in the image building script
+RUN sudo apt-get install -y openssh-server
+# Start the ssh server
+RUN sudo /etc/init.d/ssh start
+# Or probably even in the last lines of the Dockerfile
+USER root
+CMD [ "sh", "/etc/init.d/ssh", "start"]
+
 ```
 
 ## Tools
 
 ```bash
 
-$ apt install less
-$ apt install man
+$ apt-get install less
+$ apt-get install man
+
+# Linux console font and keytable utilities (chvt)
+$ apt-get install kbd
+# This package (kbd) allows you to set up the Linux console, change the font, resize 
+# text mode virtual consoles and remap the keyboard. You will probably 
+# want to install a set of data files, such as the one in the "console-data" package.
+
+# Install the ssh server in the image building script
+$ sudo apt-get install -y ssh
+$ sudo apt-get install -y openssh-server
+# Start the ssh server
+$ sudo /etc/init.d/ssh start
+
+# Change the root password
+$ passwd root
 
 ```
 
@@ -67,6 +95,23 @@ $ chmod a+x <file_name> # all
 # Assign file or directory to specific user and group
 $ sudo chmod root:root <file_name>
 $ sudo chmod root: <file_name> # Short command version
+
+```
+
+## Terminals 
+
+```bash
+
+# cCommand in Unix operating systems to print the file name 
+# of the terminal connected to standard input.
+$ tty
+$ sudo chvt 5
+# W is a command line utility that displays information 
+# about currently logged in users and what each user is doing.
+$ w
+$ ssh localhost
+> New password:
+> Retype new password:
 
 ```
 
