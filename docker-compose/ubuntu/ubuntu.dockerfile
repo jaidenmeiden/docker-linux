@@ -18,6 +18,11 @@ RUN apt install -y nginx php-fpm supervisor && \
     rm -rf /var/lib/apt/lists/* && \
     apt clean
 
+# The 'unminimize' command will install the standard Ubuntu Server packages 
+# if you want to convert a Minimal instance to a standard Server environment 
+# for interactive use.
+RUN yes | unminimize
+
 # Activate shell
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
     
