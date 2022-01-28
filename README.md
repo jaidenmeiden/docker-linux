@@ -288,6 +288,69 @@ $ sudo ps auxf | sort -nr -k 4
 $ sudo ps auxf | sort -nr -k 4 | head -5
 ```
 
+### Network parameters analysis
+
+[ifconfig](https://www.geeksforgeeks.org/ifconfig-command-in-linux-with-examples/?ref=gcse)
+
+[ip](https://www.geeksforgeeks.org/ip-command-in-linux-with-examples/?ref=gcse)
+
+[hostname](https://www.geeksforgeeks.org/hostname-command-in-linux-with-examples/?ref=gcse)
+
+[route](https://www.geeksforgeeks.org/route-command-in-linux-with-examples/?ref=gcse)
+
+[nslookup](https://www.geeksforgeeks.org/route-command-in-linux-with-examples/?ref=gcse)
+
+[curl](https://www.geeksforgeeks.org/curl-command-in-linux-with-examples/?ref=gcse)
+
+[wget](https://www.geeksforgeeks.org/wget-command-in-linux-unix/?ref=gcse)
+
+
+```bash
+$ ifconfig
+
+$ ip a
+$ ip -4 a # Search IPV4
+$ ip -6 a # Search IPV6
+
+# Used to obtain the DNS(Domain Name System)
+$ hostname
+
+# To display routing table in full numeric form.
+$ route -n
+
+# It is a useful command for getting information from the DNS server
+$ nslookup [option]
+$ nslookup google.com
+
+# It is a command-line tool to transfer data to or from a server
+$ curl [options] [URL...]
+
+# It is the non-interactive network downloader which is used to download files from the server even when the user has not logged on to the system
+$ wget [option] [URL]
+```
+
+### Package management
+
+#### Red Hat / CentOS / Fedora
+
+Its package manager is`.rpm` (Red hat Package Manager). Package manager data base is located in `/var/lib/rpm`.
+
+The command `rpm -qa` allows us to list all the `rpms` installed into machine. With `rpm -i package-name.rpm` install the package and with `rpm -e package-name.rpm` remove them.
+
+The package can be installed from a repository without have to know the file route or the dependencies with the command `yum install package-name`.
+
+We can also search specific packages with the command `yum search posible-package-name`.
+
+#### Debian / Ubuntu
+
+Its package manager is `.deb`. We can perform installations with `dpkg -i nombre-del-paquete.deb` o repositories `apt`.
+
+Its data base is located in `/var/lib/dpkg`. With the command `dpkg -l` list all the `debs` installed into machine. We can install the package with `dpkg -i package-name` and we remove them from the system with `dpkg -r package-name`.
+
+If we have a configured software, we can use the command `dpkg-reconfigure package-name` run setup wizard again (If is possible).
+
+We can also perform the installations with the command `apt install package-name` and search the package with `apt search posible-package-name`.
+
 ## Licencia
 
 Copyright © 2021 JaidenMeiden.
