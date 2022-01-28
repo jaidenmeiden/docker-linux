@@ -329,9 +329,9 @@ $ curl [options] [URL...]
 $ wget [option] [URL]
 ```
 
-### Package management
+## Package management
 
-#### Red Hat / CentOS / Fedora
+### Red Hat / CentOS / Fedora
 
 Its package manager is`.rpm` (Red hat Package Manager). Package manager data base is located in `/var/lib/rpm`.
 
@@ -341,7 +341,7 @@ The package can be installed from a repository without have to know the file rou
 
 We can also search specific packages with the command `yum search posible-package-name`.
 
-#### Debian / Ubuntu
+### Debian / Ubuntu
 
 Its package manager is `.deb`. We can perform installations with `dpkg -i nombre-del-paquete.deb` o repositories `apt`.
 
