@@ -50,6 +50,14 @@ $ passwd root
 
 ## Useful Commands
 
+[cat](https://www.geeksforgeeks.org/cat-command-in-linux-with-examples/?ref=gcse)
+
+[less](https://www.geeksforgeeks.org/less-command-linux-examples/?ref=gcse)
+
+[tail](https://www.geeksforgeeks.org/tail-command-linux-examples/?ref=gcse)
+
+[head](https://www.geeksforgeeks.org/head-command-linux-examples/?ref=gcse)
+
 ```bash
 
 # The 'unminimize' command will install the standard Ubuntu Server packages 
@@ -79,6 +87,8 @@ $ man <command_name>
 
 ## Permissions (r || w || x)
 
+[chmod](https://www.geeksforgeeks.org/chmod-command-linux/?ref=gcse)
+
 ```bash
 # Values are used for permissions and the sum define specific permission
 # r => 4
@@ -98,7 +108,13 @@ $ sudo chmod root: <file_name> # Short command version
 
 ```
 
-## Terminals 
+## Terminals (Commands)
+
+[tty](https://www.geeksforgeeks.org/tty-command-in-linux-with-examples/?ref=gcse)
+
+[chvt](https://www.geeksforgeeks.org/chvt-command-in-linux-with-examples/)
+
+[w](https://www.geeksforgeeks.org/w-command-in-linux-with-examples/)
 
 ```bash
 
@@ -113,6 +129,13 @@ $ sudo chvt 5
 # about currently logged in users and what each user is doing.
 $ w
 
+```
+
+### Find out information
+
+[who](https://www.geeksforgeeks.org/who-command-in-linux/)
+
+```bash
 # Show information about users connected to the system information about system startup
 $ who
 $ who -H
@@ -124,6 +147,13 @@ $ who -b
 $ who -r
 $ who -q
 
+```
+
+### Processes on a system
+
+[ps](https://www.geeksforgeeks.org/ps-command-in-linux-with-examples/?ref=gcse)
+
+```bash
 # Extract information about system processes
 $ ps
 # Show all processes
@@ -134,6 +164,7 @@ $ ps -r
 # BSD format
 $ ps ax
 $ ps aux
+$ ps aux | grep <string_searched>
 # Show all processes executed by a specific command
 $ ps -C <command_name>
 # Show all processes executed by a user
@@ -148,10 +179,65 @@ $ ps -f --ppid <number_process>
 $ ps -t tty1
 $ ps -ft tty1
 
+```
+
+### Kill processes
+
+[kill](https://www.geeksforgeeks.org/kill-command-in-linux-with-examples/?ref=gcse)
+
+```bash
 # Kill processes
 $ kill <number_process>
 $ kill -9 <number_process>
 
+```
+
+### Text editors
+
+[vi editor](https://www.geeksforgeeks.org/vi-editor-unix/?ref=gcse)
+
+To exit from editor digit `Ctrl + z`
+
+```bash
+# Work with text editors
+$ vi <filename>
+```
+[jobs](https://www.cyberciti.biz/faq/unix-linux-jobs-command-examples-usage-syntax/)
+
+[fg](https://www.geeksforgeeks.org/fg-command-in-linux-with-examples/?ref=gcse)
+
+```bash
+# Review processes 
+$ jobs
+# Return to previous process
+$ fg 
+```
+
+Create file with `vi` editor
+
+```bash
+## Create file
+$ vi script.sh
+```
+
+Content `script.sh`
+```vi
+#!/bin/bash
+echo "Jaiden Meiden"
+```
+Execute script
+```bash
+$ ./script.sh
+$ ./script.sh & # keep console
+$ nohup ./script.sh & # Generate exit called  nohup.out
+```
+
+### SSH
+
+[ssh](https://www.geeksforgeeks.org/ssh-command-in-linux-with-examples/?ref=gcse)
+To exit from editor digit `Ctrl + z`
+
+```bash
 # Change ssh password
 $ ssh localhost
 > New password:
