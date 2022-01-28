@@ -232,7 +232,7 @@ $ ./script.sh & # keep console
 $ nohup ./script.sh & # Generate exit called  nohup.out
 ```
 
-### SSH
+### SSH Command
 
 [ssh](https://www.geeksforgeeks.org/ssh-command-in-linux-with-examples/?ref=gcse)
 To exit from editor digit `Ctrl + z`
@@ -243,6 +243,49 @@ $ ssh localhost
 > New password:
 > Retype new password:
 
+```
+
+### Monitoring system resources
+
+[top](https://www.geeksforgeeks.org/top-command-in-linux-with-examples/?ref=gcse)
+
+[htop](https://www.geeksforgeeks.org/htop-command-in-linux-with-examples/?ref=gcse)
+
+[htop](https://www.geeksforgeeks.org/htop-command-in-linux-with-examples/?ref=gcse)
+
+To exit from editor digit `Ctrl + c`
+
+```bash
+$ top
+$ htop
+
+# Load average
+$ cat /proc/cpuinfo | grep "processor"
+# flag -i is case sensitive
+$ cat /proc/cpuinfo | grep -i "Processor"
+
+# Memory
+$ free
+$ free -h
+
+# Hard disk
+$ du
+$ du -hsc /home/
+
+```
+
+[sort](https://www.geeksforgeeks.org/sort-command-linuxunix-examples/?ref=gcse)
+
+To exit from editor digit `Ctrl + c`
+
+```bash
+# Which processes consume more CPU?
+$ sudo ps auxf | sort -nr -k 3
+$ sudo ps auxf | sort -nr -k 3 | head -5
+
+# Which processes consume more RAM?
+$ sudo ps auxf | sort -nr -k 4
+$ sudo ps auxf | sort -nr -k 4 | head -5
 ```
 
 ## Licencia
