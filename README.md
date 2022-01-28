@@ -102,13 +102,57 @@ $ sudo chmod root: <file_name> # Short command version
 
 ```bash
 
-# cCommand in Unix operating systems to print the file name 
+# Command in Unix operating systems to print the file name 
 # of the terminal connected to standard input.
 $ tty
+
+# Change the virtual terminal in the foreground
 $ sudo chvt 5
+
 # W is a command line utility that displays information 
 # about currently logged in users and what each user is doing.
 $ w
+
+# Show information about users connected to the system information about system startup
+$ who
+$ who -H
+$ who -Hu
+$ who -m
+$ who am i
+$ whoami
+$ who -b
+$ who -r
+$ who -q
+
+# Extract information about system processes
+$ ps
+# Show all processes
+# UNIX format
+$ ps -A
+$ ps -e
+$ ps -r
+# BSD format
+$ ps ax
+$ ps aux
+# Show all processes executed by a specific command
+$ ps -C <command_name>
+# Show all processes executed by a user
+$ ps -u 1000
+$ ps -U root -u root u
+# Show processes by group property
+$ ps -fG cas
+$ ps -g 1
+# Show processes by PID
+$ ps -f --ppid <number_process>
+# Show processes by TTY
+$ ps -t tty1
+$ ps -ft tty1
+
+# Kill processes
+$ kill <number_process>
+$ kill -9 <number_process>
+
+# Change ssh password
 $ ssh localhost
 > New password:
 > Retype new password:
