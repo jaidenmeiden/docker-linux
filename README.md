@@ -351,6 +351,49 @@ If we have a configured software, we can use the command `dpkg-reconfigure packa
 
 We can also perform the installations with the command `apt install package-name` and search the package with `apt search posible-package-name`.
 
+## Nagios: Unpacking, decompressing, compiling, and installing packages
+
+Install some tools to manage MySQL database
+
+```bash
+$ sudo apt install build-essential libgd-dev openssl libssl-dev unzip apache2 php gcc libdbi-perl libdbd-mysql-perl
+```
+
+Nagios installation
+
+```bash
+$ wget https://assets.nagios.com/downloads/nagioscore/releases/nagios-4.4.4.tar.gz -O nagioscore.tar.gz
+```
+
+Decompressing and Unpacking files with `tar`
+
+```bash
+$ tar xvzf nagioscore.tar.gz
+```
+
+Enter the folder and run the following commands:
+
+```bash
+# 1:
+sudo ./configure --with-https-conf=/etc/apache2/sites-enabled
+# 2:
+sudo make all
+# 3:
+sudo make install
+# 4:
+sudo make install-init
+# 5:
+sudo make install-commandmode
+# 6:
+sudo make install-config
+#7:
+sudo make install-webconf
+```
+
+```bash
+sudo systemctl (status, start, restart, reload, stop, enable, disable, list-dependencies) nagios
+```
+
 ## Licencia
 
 Copyright © 2021 JaidenMeiden.
