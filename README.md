@@ -52,13 +52,10 @@ $ passwd root
 
 ## Useful Commands
 
-[cat](https://www.geeksforgeeks.org/cat-command-in-linux-with-examples/?ref=gcse)
-
-[less](https://www.geeksforgeeks.org/less-command-linux-examples/?ref=gcse)
-
-[tail](https://www.geeksforgeeks.org/tail-command-linux-examples/?ref=gcse)
-
-[head](https://www.geeksforgeeks.org/head-command-linux-examples/?ref=gcse)
+1. [cat](https://www.geeksforgeeks.org/cat-command-in-linux-with-examples/?ref=gcse)
+2. [less](https://www.geeksforgeeks.org/less-command-linux-examples/?ref=gcse)
+3. [tail](https://www.geeksforgeeks.org/tail-command-linux-examples/?ref=gcse)
+4. [head](https://www.geeksforgeeks.org/head-command-linux-examples/?ref=gcse)
 
 ```bash
 
@@ -89,7 +86,7 @@ $ man <command_name>
 
 ## Permissions (r || w || x)
 
-[chmod](https://www.geeksforgeeks.org/chmod-command-linux/?ref=gcse)
+1. [chmod](https://www.geeksforgeeks.org/chmod-command-linux/?ref=gcse)
 
 ```bash
 # Values are used for permissions and the sum define specific permission
@@ -112,11 +109,9 @@ $ sudo chmod root: <file_name> # Short command version
 
 ## Terminals (Commands)
 
-[tty](https://www.geeksforgeeks.org/tty-command-in-linux-with-examples/?ref=gcse)
-
-[chvt](https://www.geeksforgeeks.org/chvt-command-in-linux-with-examples/)
-
-[w](https://www.geeksforgeeks.org/w-command-in-linux-with-examples/)
+1. [tty](https://www.geeksforgeeks.org/tty-command-in-linux-with-examples/?ref=gcse)
+2. [chvt](https://www.geeksforgeeks.org/chvt-command-in-linux-with-examples/)
+3. [w](https://www.geeksforgeeks.org/w-command-in-linux-with-examples/)
 
 ```bash
 
@@ -135,7 +130,7 @@ $ w
 
 ### Find out information
 
-[who](https://www.geeksforgeeks.org/who-command-in-linux/)
+1. [who](https://www.geeksforgeeks.org/who-command-in-linux/)
 
 ```bash
 # Show information about users connected to the system information about system startup
@@ -153,7 +148,7 @@ $ who -q
 
 ### Processes on a system
 
-[ps](https://www.geeksforgeeks.org/ps-command-in-linux-with-examples/?ref=gcse)
+1. [ps](https://www.geeksforgeeks.org/ps-command-in-linux-with-examples/?ref=gcse)
 
 ```bash
 # Extract information about system processes
@@ -185,7 +180,7 @@ $ ps -ft tty1
 
 ### Kill processes
 
-[kill](https://www.geeksforgeeks.org/kill-command-in-linux-with-examples/?ref=gcse)
+1. [kill](https://www.geeksforgeeks.org/kill-command-in-linux-with-examples/?ref=gcse)
 
 ```bash
 # Kill processes
@@ -196,7 +191,7 @@ $ kill -9 <number_process>
 
 ### Text editors
 
-[vi editor](https://www.geeksforgeeks.org/vi-editor-unix/?ref=gcse)
+1. [vi editor](https://www.geeksforgeeks.org/vi-editor-unix/?ref=gcse)
 
 To exit from editor digit `Ctrl + z`
 
@@ -204,9 +199,9 @@ To exit from editor digit `Ctrl + z`
 # Work with text editors
 $ vi <filename>
 ```
-[jobs](https://www.cyberciti.biz/faq/unix-linux-jobs-command-examples-usage-syntax/)
 
-[fg](https://www.geeksforgeeks.org/fg-command-in-linux-with-examples/?ref=gcse)
+1. [jobs](https://www.cyberciti.biz/faq/unix-linux-jobs-command-examples-usage-syntax/)
+2. [fg](https://www.geeksforgeeks.org/fg-command-in-linux-with-examples/?ref=gcse)
 
 ```bash
 # Review processes 
@@ -236,11 +231,9 @@ $ nohup ./script.sh & # Generate exit called  nohup.out
 
 ### Monitoring system resources
 
-[top](https://www.geeksforgeeks.org/top-command-in-linux-with-examples/?ref=gcse)
-
-[htop](https://www.geeksforgeeks.org/htop-command-in-linux-with-examples/?ref=gcse)
-
-[htop](https://www.geeksforgeeks.org/htop-command-in-linux-with-examples/?ref=gcse)
+1. [top](https://www.geeksforgeeks.org/top-command-in-linux-with-examples/?ref=gcse)
+2. [htop](https://www.geeksforgeeks.org/htop-command-in-linux-with-examples/?ref=gcse)
+3. [htop](https://www.geeksforgeeks.org/htop-command-in-linux-with-examples/?ref=gcse)
 
 To exit from editor digit `Ctrl + c`
 
@@ -263,7 +256,7 @@ $ du -hsc /home/
 
 ```
 
-[sort](https://www.geeksforgeeks.org/sort-command-linuxunix-examples/?ref=gcse)
+1. [sort](https://www.geeksforgeeks.org/sort-command-linuxunix-examples/?ref=gcse)
 
 To exit from editor digit `Ctrl + c`
 
@@ -279,19 +272,13 @@ $ sudo ps auxf | sort -nr -k 4 | head -5
 
 ### Network parameters analysis
 
-[ifconfig](https://www.geeksforgeeks.org/ifconfig-command-in-linux-with-examples/?ref=gcse)
-
-[ip](https://www.geeksforgeeks.org/ip-command-in-linux-with-examples/?ref=gcse)
-
-[hostname](https://www.geeksforgeeks.org/hostname-command-in-linux-with-examples/?ref=gcse)
-
-[route](https://www.geeksforgeeks.org/route-command-in-linux-with-examples/?ref=gcse)
-
-[nslookup](https://www.geeksforgeeks.org/route-command-in-linux-with-examples/?ref=gcse)
-
-[curl](https://www.geeksforgeeks.org/curl-command-in-linux-with-examples/?ref=gcse)
-
-[wget](https://www.geeksforgeeks.org/wget-command-in-linux-unix/?ref=gcse)
+1. [ifconfig](https://www.geeksforgeeks.org/ifconfig-command-in-linux-with-examples/?ref=gcse)
+2. [ip](https://www.geeksforgeeks.org/ip-command-in-linux-with-examples/?ref=gcse)
+3. [hostname](https://www.geeksforgeeks.org/hostname-command-in-linux-with-examples/?ref=gcse)
+4. [route](https://www.geeksforgeeks.org/route-command-in-linux-with-examples/?ref=gcse)
+5. [nslookup](https://www.geeksforgeeks.org/route-command-in-linux-with-examples/?ref=gcse)
+6. [curl](https://www.geeksforgeeks.org/curl-command-in-linux-with-examples/?ref=gcse)
+7. [wget](https://www.geeksforgeeks.org/wget-command-in-linux-unix/?ref=gcse)
 
 
 ```bash
@@ -344,7 +331,7 @@ We can also perform the installations with the command `apt install package-name
 
 Nagios is a powerful monitoring system that enables organizations to identify and resolve IT infrastructure problems before they affect critical business processes.
 
-[Nagios](https://www.nagios.org/)
+1. [Nagios](https://www.nagios.org/)
 
 Install some tools to manage MySQL database
 
@@ -391,7 +378,7 @@ sudo systemctl (status, start, restart, reload, stop, enable, disable, list-depe
 
 ## Users, fundamental task into management of operating systems
 
-[id](https://www.geeksforgeeks.org/id-command-in-linux-with-examples/?ref=gcse)
+1. [id](https://www.geeksforgeeks.org/id-command-in-linux-with-examples/?ref=gcse)
 
 User passwords are store in the file `etc/shadow`, however these are encrypted
 
@@ -416,17 +403,12 @@ $ passwd <username> # Change password from others users
 
 ## User Groups
 
-[useradd](https://www.geeksforgeeks.org/useradd-command-in-linux-with-examples/?ref=gcse)
-
-[adduser](https://www.geeksforgeeks.org/adduser-command-in-linux-with-examples/?ref=gcse)
-
-[userdel](https://www.geeksforgeeks.org/userdel-command-in-linux-with-examples/?ref=gcse)
-
-[usermod](https://www.geeksforgeeks.org/usermod-command-in-linux-with-examples/?ref=gcse)
-
-[sudo](https://www.geeksforgeeks.org/sudo-command-in-linux-with-examples/?ref=gcse)
-
-[gpasswd](https://www.geeksforgeeks.org/gpasswd-command-in-linux-with-examples/?ref=gcse)
+1. [useradd](https://www.geeksforgeeks.org/useradd-command-in-linux-with-examples/?ref=gcse)
+2. [adduser](https://www.geeksforgeeks.org/adduser-command-in-linux-with-examples/?ref=gcse)
+3. [userdel](https://www.geeksforgeeks.org/userdel-command-in-linux-with-examples/?ref=gcse)
+4. [usermod](https://www.geeksforgeeks.org/usermod-command-in-linux-with-examples/?ref=gcse)
+5. [sudo](https://www.geeksforgeeks.org/sudo-command-in-linux-with-examples/?ref=gcse)
+6. [gpasswd](https://www.geeksforgeeks.org/gpasswd-command-in-linux-with-examples/?ref=gcse)
 
 You never must modify file `etc/passwd` manually
 
@@ -469,9 +451,8 @@ $ sudo -l
 
 ## PAM (Linux Pluggable Authentication Modules)
 
-[PAM](https://www.pathname.com/fhs/pub/fhs-2.3.pdf)
-
-[libpwquality-tools](https://packages.debian.org/es/sid/admin/libpwquality-tools)
+1. [PAM](https://www.pathname.com/fhs/pub/fhs-2.3.pdf)
+2. [libpwquality-tools](https://packages.debian.org/es/sid/admin/libpwquality-tools)
 
 `PAM` is a mechanism for users administration into operating systems.
 
@@ -538,7 +519,7 @@ Content `time.conf` (Example to limit schedule)
 
 SSH is a protocol that help us connect to our servers 
 
-[ssh](https://www.geeksforgeeks.org/ssh-command-in-linux-with-examples/?ref=gcse)
+1. [ssh](https://www.geeksforgeeks.org/ssh-command-in-linux-with-examples/?ref=gcse)
 
 To exit from editor digit `Ctrl + z`
 
@@ -582,11 +563,9 @@ $ ssh localhost
 
 ### Configure DNS with `bind`
 
-[bind](https://www.geeksforgeeks.org/bind-command-in-linux-with-examples/?ref=gcse)
-
-[netstat](https://www.geeksforgeeks.org/netstat-command-linux/?ref=gcse)
-
-[dig](https://www.geeksforgeeks.org/dig-command-in-linux-with-examples/?ref=gcse)
+1. [bind](https://www.geeksforgeeks.org/bind-command-in-linux-with-examples/?ref=gcse)
+2. [netstat](https://www.geeksforgeeks.org/netstat-command-linux/?ref=gcse)
+3. [dig](https://www.geeksforgeeks.org/dig-command-in-linux-with-examples/?ref=gcse)
 
 ```bash
 # bind installation
@@ -608,11 +587,11 @@ The main configuration file will be `/etc/bind/named.conf`, we also have the `/e
 
 ### Start, stop and reload services
 
-[systemctl](https://www.geeksforgeeks.org/systemctl-in-unix/?ref=gcse)
+1. [systemctl](https://www.geeksforgeeks.org/systemctl-in-unix/?ref=gcse)
 
 The `systemctl` command allows us to manage the processes of our operating system. Our services may be **active** (ie turned on) or **inactive** (turned off). We can also configure whether they are **enabled** or **disabled** to run automatically at system startup.
 
-[journalctl](https://www.geeksforgeeks.org/journalctl-command-in-linux-with-examples/?ref=gcse)
+1. [journalctl](https://www.geeksforgeeks.org/journalctl-command-in-linux-with-examples/?ref=gcse)
 
 The `journalctl` command allows us to see the logs of the processes of our operating system. Remember that all of them are stored in the `/var/log/` folder.
 
@@ -643,19 +622,19 @@ $ sudo journalctl -o json
 
 A practical guide to how Kubernetes traffic management tools – including an Ingress controller and service mesh – can help you solve the challenges of resilience, visibility, and security that come with running Kubernetes in production.
 
-[NGINX](https://www.nginx.com/)
+1. [NGINX](https://www.nginx.com/)
 
 NGINX Amplify is a free, SaaS based monitoring tool for NGINX Open Source and NGINX Plus. With NGINX Amplify you can monitor performance, keep track of infrastructure assets, and improve configuration with static analysis. NGINX Amplify also monitors the underlying OS, application servers (like PHP FPM), databases, and other components. NGINX Amplify is simple to set up, yet powerful enough to provide critical insight into NGINX and system performance.
 
-[NGINX Amplify](https://www.nginx.com/products/nginx-amplify/)
+1. [NGINX Amplify](https://www.nginx.com/products/nginx-amplify/)
 
 ### MySQL monitoring with Nagios
 
-[MySQL](https://likegeeks.com/mysql-on-linux-beginners-tutorial/)
+1. [MySQL](https://likegeeks.com/mysql-on-linux-beginners-tutorial/)
 
 Nagios is a powerful monitoring system that enables organizations to identify and resolve IT infrastructure problems before they affect critical business processes.
 
-[Nagios](https://www.nagios.org/)
+1. [Nagios](https://www.nagios.org/)
 
 ```bash
 # Search mysql server package
@@ -805,6 +784,19 @@ It is a scripting language that helps us process information using patterns to f
 $ awk '{print $1}' /var/log/nginx/access.log
 $ awk '{print $1}' /var/log/nginx/access.log | sort | uniq -c | sort -nr
 ```
+
+#### Tools
+
+1. [Collectd](https://collectd.org/)
+2. [Collectd plugins](https://collectd.org/wiki/index.php/Table_of_Plugins)
+3. [Nmon](http://nmon.sourceforge.net/pmwiki.php)
+4. [Munin](https://munin-monitoring.org/)
+5. [Grafana](https://grafana.com/)
+
+#### Monitoring agents
+
+1. [New Relic](https://newrelic.com/)
+2. [Data dog](https://www.datadoghq.com/)
 
 ## Licencia
 
