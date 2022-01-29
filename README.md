@@ -342,6 +342,8 @@ We can also perform the installations with the command `apt install package-name
 
 ## Nagios: Unpacking, decompressing, compiling, and installing packages
 
+Nagios is a powerful monitoring system that enables organizations to identify and resolve IT infrastructure problems before they affect critical business processes.
+
 [Nagios](https://www.nagios.org/)
 
 Install some tools to manage MySQL database
@@ -526,13 +528,9 @@ $ vi /etc/security/time.conf
 Content `time.conf` (Example to limit schedule)
 ```vi
 ...
-...
-...
 # Another silly example, user 'root' is denied xsh access
 *;*;user1|user2|user3;wk0800-1800
 # from pseudo terminals at the weekend and on mondays.
-...
-...
 ...
 ```
 
@@ -568,13 +566,9 @@ $ ssh -v <user>@<ip_address> # You can put four times letter `v`
 Content `sshd_config` (Available options)
 ```vi
 ...
-...
-...
 # To disable tunneled clear text passwords, change to no here!
 PasswordAuthentication yes
 PermitEmptyPasswords no
-...
-...
 ...
 ```
 
@@ -654,6 +648,134 @@ A practical guide to how Kubernetes traffic management tools – including an In
 NGINX Amplify is a free, SaaS based monitoring tool for NGINX Open Source and NGINX Plus. With NGINX Amplify you can monitor performance, keep track of infrastructure assets, and improve configuration with static analysis. NGINX Amplify also monitors the underlying OS, application servers (like PHP FPM), databases, and other components. NGINX Amplify is simple to set up, yet powerful enough to provide critical insight into NGINX and system performance.
 
 [NGINX Amplify](https://www.nginx.com/products/nginx-amplify/)
+
+### MySQL monitoring with Nagios
+
+[MySQL](https://likegeeks.com/mysql-on-linux-beginners-tutorial/)
+
+Nagios is a powerful monitoring system that enables organizations to identify and resolve IT infrastructure problems before they affect critical business processes.
+
+[Nagios](https://www.nagios.org/)
+
+```bash
+# Search mysql server package
+$ sudo apt search "mysql-server$"
+
+# Install MySQL
+$ sudo apt install mysql-server
+
+# Database connection
+$ mysql -u <username> -p
+$ mysql -h <ip-host> -u <username> -p
+
+# Database information
+$ cat /etc/mysql/debian.cnf
+
+# Secure the database server
+$ sudo mysql_secure_installation
+
+# Verify that Apache is running
+$ systemctl status apache2
+
+# Activate rewrite and cgi modules
+$ sudo a2enmod rewrite cgi
+
+# restart apache
+$ sudo systemctl restart apache2
+
+# Create a user for Nagios
+$ sudo htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
+
+# Enter Nagios in our web browser, typing as address:
+$ server_ip_address:8080/nagios
+# It is very important to note that we are entering port `8080`, as that is where Apache is running.
+
+# Install the following dependencies:
+$ sudo apt install -y libmcrypt-dev make libssl-dev bc gawk dc build-essential snmp libnet-snmp-perl gettext
+
+# If you did not install the plugins in the previous classes, you must do the following: first, positioned in your home, download them
+$ wget https://nagios-plugins.org/download/nagios-plugins-2.2.1.tar.gz -0 plugins.tar.gz -O plugins.tar.gz
+
+# Unpack and unzip the plugin archive
+$ tar xzvf plugins.tar.gz
+
+# Already in the plugins folder that was created with the previous step, configure them
+$ sudo ./config
+
+# Verify that there are no errors or warnings
+$ sudo /usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
+
+# Restart Nagios
+$ sudo systemctl restart nagios
+
+# In our home, download the MySQL plugin
+$ wget https://labs.consol.de/assets/downloads/nagios/check_mysql_health-2.2.2.tar.gz -O mysqlplugin.tar.gz
+
+# Unpack and unzip the plugin archive
+$ tar xzvf mysqlplugin.tar.gz
+
+``` 
+
+### Nagios Configuration
+
+Already in the MySQL console, create a user
+
+```MySQL
+GRANTSELECTON *.* TO'nagios'@'localhost'IDENTIFIEDBY'nagiosplatziS14*';
+FLUSHPRIVILEGES; 
+```
+
+Configurations:
+
+```bash
+$ sudo vi /usr/local/nagios/etc/nagios.cfg
+```
+
+Already inside the file, add the following line
+Content `nagios.cfg` (Modify options)
+```vi
+...
+# You can specify individual object config files as shown below
+cfg_file=/usr/local/nagios/etc/objects/mysqlmonitoring.cfg
+...
+```
+
+```bash
+$ sudo vi /usr/local/nagios/etc/objects/commands.cfg
+```
+
+Already inside the file, add the following line, to use Nagios
+Content `commands.cfg` (Modify options)
+```vi
+...
+define command {
+	command_name check_mysql_health
+	command_line $USER1$/check_mysql_health -H $ARG4$ --username $ARG1$ --password $ARG2$ --port $ARG5$  --mode $ARG3$
+}
+```
+
+Create the file that we named in the configuration with the `nagios.cfg` file
+```bash
+$ sudo vi /usr/local/nagios/etc/objects/mysqlmonitoring.cfg
+```
+
+Already inside the file, add the following line
+Content `commands.cfg` (Modify options)
+```vi
+define service {
+	use local-service
+	host_name localhost
+	service_description MySQL connection-time
+	check_command check_mysql_health!nagios!nagiosplatziS14*!connection-time!127.0.0.1!3306!
+}
+```
+
+Restart `Nagios`
+```bash
+$ sudo systemctl restart nagios
+```
+
+
 
 ## Licencia
 
