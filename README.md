@@ -464,6 +464,8 @@ $ groups <username>
 
 # Add user to a group
 $ sudo gpasswd -a <username> <groupname>
+$ sudo gpasswd -a <username> root # Debian (Full access)
+$ sudo gpasswd -a <username> wheel # CentOS (Full access)
 # Another form
 $ sudo usermod -aG <groupname> <username>
 
@@ -474,6 +476,78 @@ $ sudo gpasswd -d <username> <groupname>
 $ sudo -l
 
 ```
+
+## PAM (Linux Pluggable Authentication Modules)
+
+[PAM](https://www.pathname.com/fhs/pub/fhs-2.3.pdf)
+
+[libpwquality-tools](https://packages.debian.org/es/sid/admin/libpwquality-tools)
+
+`PAM` is a mechanism for users administration into operating systems.
+
+```bash
+# PAM directories
+$ ls /etc/pan.d/
+$ ls /etc/security/
+$ ls /lib64/security/
+
+# We can test how strong our passwords are
+# CentOS
+$ pwscore
+
+# Debian
+$ apt install libpwquality-tools
+$ pwscore
+
+# Permission list
+$ ulimit
+$ ulimit -a
+# Limit permissions
+$ ulimit -u <maximum-process-number>
+
+```
+
+Create file with `vi` editor to test `ulimit`
+
+```bash
+## Create file
+$ vi script.sh
+```
+
+Content `script.sh`
+```vi
+#!/bin/bash
+echo "Jaiden Meiden"
+$0
+```
+
+Execute script
+```bash
+$ chmod +x script.sh
+$ ./script.sh
+
+```
+
+Schedule limit user access to the system
+
+```bash
+# Acesses schedule
+$ vi /etc/security/time.conf
+
+```
+Content `time.conf` (Example to limit schedule)
+```vi
+...
+...
+...
+# Another silly example, user 'root' is denied xsh access
+*;*;user1|user2|user3;wk0800-1800
+# from pseudo terminals at the weekend and on mondays.
+...
+...
+...
+```
+
 
 
 ## Licencia
