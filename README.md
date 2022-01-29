@@ -28,18 +28,20 @@ CMD [ "sh", "/etc/init.d/ssh", "start"]
 
 ```bash
 
-$ apt-get install less
-$ apt-get install man
+$ apt install vi
+$ apt install less
+$ apt install man
+$ apt install systemctl
 
 # Linux console font and keytable utilities (chvt)
-$ apt-get install kbd
+$ apt install kbd
 # This package (kbd) allows you to set up the Linux console, change the font, resize 
 # text mode virtual consoles and remap the keyboard. You will probably 
 # want to install a set of data files, such as the one in the "console-data" package.
 
 # Install the ssh server in the image building script
-$ sudo apt-get install -y ssh
-$ sudo apt-get install -y openssh-server
+$ sudo apt install -y ssh
+$ sudo apt install -y openssh-server
 # Start the ssh server
 $ sudo /etc/init.d/ssh start
 
@@ -230,20 +232,6 @@ Execute script
 $ ./script.sh
 $ ./script.sh & # keep console
 $ nohup ./script.sh & # Generate exit called  nohup.out
-```
-
-### SSH Command
-
-[ssh](https://www.geeksforgeeks.org/ssh-command-in-linux-with-examples/?ref=gcse)
-
-To exit from editor digit `Ctrl + z`
-
-```bash
-# Change ssh password
-$ ssh localhost
-> New password:
-> Retype new password:
-
 ```
 
 ### Monitoring system resources
@@ -546,6 +534,56 @@ Content `time.conf` (Example to limit schedule)
 ...
 ...
 ...
+```
+
+### SSH Command
+
+SSH is a protocol that help us connect to our servers 
+
+[ssh](https://www.geeksforgeeks.org/ssh-command-in-linux-with-examples/?ref=gcse)
+
+To exit from editor digit `Ctrl + z`
+
+```bash
+# Activate password authentication
+$ sudo vi /etc/ssh/sshd_config
+
+# Restart the service
+$ sudo systemctl stop ssh
+$ sudo systemctl status ssh
+$ sudo systemctl start ssh
+
+# Generate key
+$ ssh-keygen
+
+# Copy key to server
+$ ssh-copy-id -i ~/.ssh/id_rsa.pub <user>@<ip_address>
+
+# Login with ssh
+$ ssh <user>@<ip_address>
+$ ssh -v <user>@<ip_address> # You can put four times letter `v`
+
+```
+
+Content `sshd_config` (Available options)
+```vi
+...
+...
+...
+# To disable tunneled clear text passwords, change to no here!
+PasswordAuthentication yes
+PermitEmptyPasswords no
+...
+...
+...
+```
+
+```bash
+# Change ssh password
+$ ssh localhost
+> New password:
+> Retype new password:
+
 ```
 
 
