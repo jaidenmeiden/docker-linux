@@ -798,6 +798,42 @@ $ awk '{print $1}' /var/log/nginx/access.log | sort | uniq -c | sort -nr
 1. [New Relic](https://newrelic.com/)
 2. [Data dog](https://www.datadoghq.com/)
 
+### Variables and their execution environment
+
+Version one
+
+```vi
+#!/bin/bash
+# Check the amount of space
+# Powered by @JaidenMeiden
+
+CWD=$(pwd)
+DATE_VARIABLE=$(date +"%F%T")
+echo $DATE_VARIABLE
+
+df -h | grep S. > disk_use_"$DATE_VARIABLE".txt
+df -h | grep /dev/mapper/ubuntu--vg-root >> disk_use_"$DATE_VARIABLE".txt
+
+echo "A file named disk_use_$DATE_VARIABLE.txt has been generated in the location $CWD" 
+```
+
+Version two
+
+```vi
+#!/bin/bash
+# Check the amount of space
+# Powered by @JaidenMeiden
+
+CWD=$(pwd)
+DATE_VARIABLE=$(date +"%F%T")
+echo $DATE_VARIABLE
+
+df -h | grep /dev > disk_use_"$DATE_VARIABLE".txt
+df -h | grep /dev/sda2 >> disk_use_"$DATE_VARIABLE".txt
+
+echo "A file named disk_use_$DATE_VARIABLE.txt has been generated in the location $CWD" 
+```
+
 ## Licencia
 
 Copyright © 2021 JaidenMeiden.
