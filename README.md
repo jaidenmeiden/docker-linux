@@ -586,7 +586,31 @@ $ ssh localhost
 
 ```
 
+### Configure DNS with `bind`
 
+[bind](https://www.geeksforgeeks.org/bind-command-in-linux-with-examples/?ref=gcse)
+
+[netstat](https://www.geeksforgeeks.org/netstat-command-linux/?ref=gcse)
+
+[dig](https://www.geeksforgeeks.org/dig-command-in-linux-with-examples/?ref=gcse)
+
+```bash
+# bind installation
+$ sudo apt install aptitude
+$ sudo apt install net-tools
+$ sudo apt install -y bind9
+$ sudo apt install dnsutils
+
+# Validate the installation with `netstat` and verify that port 53 is listening
+$ netstat -ltn
+# To make queries to the DNS we can use several tools, including `dig`
+$ dig <server_url> @127.0.0.1
+# The following after installing it is to verify everything that is included within the package
+$ dpkg -L bind9
+
+```
+
+The main configuration file will be `/etc/bind/named.conf`, we also have the `/etc/bind/rndc.key` file in which you can configure the key that can be used to gain access to the domain name.
 
 ## Licencia
 
