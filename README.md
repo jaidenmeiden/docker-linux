@@ -775,7 +775,36 @@ Restart `Nagios`
 $ sudo systemctl restart nagios
 ```
 
+### Logs
 
+#### FIND
+
+It helps us to search for files and/or folders in the operating system. We can filter by file type with -type, by name with -name, case-insensitive with -i, by modification date with -mtime, among others.
+
+```bash
+$ find /etc -type f
+$ sudo find /etc -mtime 10
+$ find /var/log -name "*.log" -type f
+$ find /var/log -iname "*.LOG" -type f
+```
+
+#### GREP
+
+It helps us filter the output of a command or file based on the words on each line.
+
+```bash
+$ grep "server" /etc/nginx/sites-available/default
+$ ps aux | grep plazi
+```
+
+#### AWK
+
+It is a scripting language that helps us process information using patterns to filter, rearrange, and format our data.
+
+```bash
+$ awk '{print $1}' /var/log/nginx/access.log
+$ awk '{print $1}' /var/log/nginx/access.log | sort | uniq -c | sort -nr
+```
 
 ## Licencia
 
