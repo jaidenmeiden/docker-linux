@@ -645,6 +645,16 @@ $ sudo journalctl -o json
 
 ```
 
+### NGINX and NGINX Amplify
+
+A practical guide to how Kubernetes traffic management tools – including an Ingress controller and service mesh – can help you solve the challenges of resilience, visibility, and security that come with running Kubernetes in production.
+
+[NGINX](https://www.nginx.com/)
+
+NGINX Amplify is a free, SaaS based monitoring tool for NGINX Open Source and NGINX Plus. With NGINX Amplify you can monitor performance, keep track of infrastructure assets, and improve configuration with static analysis. NGINX Amplify also monitors the underlying OS, application servers (like PHP FPM), databases, and other components. NGINX Amplify is simple to set up, yet powerful enough to provide critical insight into NGINX and system performance.
+
+[NGINX Amplify](https://www.nginx.com/products/nginx-amplify/)
+
 ## Licencia
 
 Copyright © 2021 JaidenMeiden.
