@@ -235,6 +235,7 @@ $ nohup ./script.sh & # Generate exit called  nohup.out
 ### SSH Command
 
 [ssh](https://www.geeksforgeeks.org/ssh-command-in-linux-with-examples/?ref=gcse)
+
 To exit from editor digit `Ctrl + z`
 
 ```bash
@@ -420,6 +421,57 @@ $ ls -l /etc/passwd
 # Change password
 $ passwd
 $ passwd <username> # Change password from others users
+
+```
+
+## User Groups
+
+[useradd](https://www.geeksforgeeks.org/useradd-command-in-linux-with-examples/?ref=gcse)
+
+[adduser](https://www.geeksforgeeks.org/adduser-command-in-linux-with-examples/?ref=gcse)
+
+[userdel](https://www.geeksforgeeks.org/userdel-command-in-linux-with-examples/?ref=gcse)
+
+[usermod](https://www.geeksforgeeks.org/usermod-command-in-linux-with-examples/?ref=gcse)
+
+[sudo](https://www.geeksforgeeks.org/sudo-command-in-linux-with-examples/?ref=gcse)
+
+[gpasswd](https://www.geeksforgeeks.org/gpasswd-command-in-linux-with-examples/?ref=gcse)
+
+You never must modify file `etc/passwd` manually
+
+```bash
+# Unique identifier for user (uid)
+# Create user without password, we should manually configure user
+$ sudo useradd <username> 
+# Create user with password and create directory into /home/
+$ sudo adduser <username>
+# Remove Users
+$ userdel <username>
+# Modify user information
+$ usermod
+
+# Commands History
+$ history
+$ history | grep passwd
+
+# Change to another user
+$ su - <username> # Switch User
+$ sudo su - <username> # Switch User
+
+# Verify groups
+$ groups <username>
+
+# Add user to a group
+$ sudo gpasswd -a <username> <groupname>
+# Another form
+$ sudo usermod -aG <groupname> <username>
+
+# Remove user from group
+$ sudo gpasswd -d <username> <groupname>
+
+# User permission list
+$ sudo -l
 
 ```
 
