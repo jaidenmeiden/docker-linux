@@ -381,6 +381,8 @@ sudo ./configure --with-https-conf=/etc/apache2/sites-enabled
 # 2:
 sudo make all
 # 3:
+sudo make install-groups-users # Optional, If you have eeror with: sudo make install
+sudo usermod -a -G nagios www-data # Optional, If you have eeror with: sudo make install
 sudo make install
 # 4:
 sudo make install-init
@@ -395,6 +397,32 @@ sudo make install-webconf
 ```bash
 sudo systemctl (status, start, restart, reload, stop, enable, disable, list-dependencies) nagios
 ```
+
+## Users, fundamental task into management of operating systems
+
+[id](https://www.geeksforgeeks.org/id-command-in-linux-with-examples/?ref=gcse)
+
+User passwords are store in the file `etc/shadow`, however these are encrypted
+
+```bash
+# Unique identifier for user (uid)
+$ id
+$ whoami
+
+# System Users
+$ cat /etc/passwd
+
+# User passwords
+$ sudo cat /etc/passwd
+# Show permissions
+$ ls -l /etc/passwd
+
+# Change password
+$ passwd
+$ passwd <username> # Change password from others users
+
+```
+
 
 ## Licencia
 
