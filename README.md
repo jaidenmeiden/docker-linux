@@ -981,6 +981,26 @@ function restore_backup {
 }
 ```
 
+### Crontab
+
+[Crontab](https://www.tutorialspoint.com/unix_commands/crontab.htm)
+
+crontab is the program used to install, deinstall or list the tables used to drive the cron daemon in Vixie Cron.
+
+```bash
+*    *    *   *    *  Command_to_execute
+|    |    |    |   |       
+|    |    |    |    Day of the Week ( 0 - 6 ) ( Sunday = 0 )
+|    |    |    |
+|    |    |    Month ( 1 - 12 )
+|    |    |
+|    |    Day of Month ( 1 - 31 )
+|    |
+|    Hour ( 0 - 23 )
+|
+Min ( 0 - 59 )
+```
+
 ## Licencia
 
 Copyright © 2021 JaidenMeiden.
