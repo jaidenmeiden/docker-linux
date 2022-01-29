@@ -612,6 +612,39 @@ $ dpkg -L bind9
 
 The main configuration file will be `/etc/bind/named.conf`, we also have the `/etc/bind/rndc.key` file in which you can configure the key that can be used to gain access to the domain name.
 
+### Start, stop and reload services
+
+[systemctl](https://www.geeksforgeeks.org/systemctl-in-unix/?ref=gcse)
+
+The `systemctl` command allows us to manage the processes of our operating system. Our services may be **active** (ie turned on) or **inactive** (turned off). We can also configure whether they are **enabled** or **disabled** to run automatically at system startup.
+
+[journalctl](https://www.geeksforgeeks.org/journalctl-command-in-linux-with-examples/?ref=gcse)
+
+The `journalctl` command allows us to see the logs of the processes of our operating system. Remember that all of them are stored in the `/var/log/` folder.
+
+```bash
+# View the status of our services
+$ sudo systemctl status <nombre-servicio>
+# Enable or disable the automatic startup of our services
+$ sudo systemctl (enable, disable) <nombre-servicio>
+# Turn services on, off, or restart
+$ sudo systemctl (start, stop, restart) <nombre-servicio>
+# View all system services
+$ sudo systemctl list-units -t service --all
+
+# See the logs of our services and do a follow-up
+$ sudo journalctl -fu <nombre-servi>
+# See how much space our logs take up
+$ sudo journalctl --disk-usage
+# Show the list of computer boots
+$ sudo journalctl --list-boots
+# Filter the logs by the type of message
+$ sudo journalctl -p (critic, info, warning, error)
+# View the logs in JSON format
+$ sudo journalctl -o json
+
+```
+
 ## Licencia
 
 Copyright © 2021 JaidenMeiden.
