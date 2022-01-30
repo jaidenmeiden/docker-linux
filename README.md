@@ -1094,11 +1094,40 @@ $ sudo ufw reset
 # Scan all ports
 $ nmap -sV -sC -p-
 # Scan specific operating systems (-O) and save result (-oA)
-$ nmap -sV -sC -O -oA <result-file> <ip-server>
+$ nmap -sV -sC -O -oA <report-file> <ip-server>
 
 # Scan for additional information
-$ ninkto -h <host-server> -o <result-file>
+$ ninkto -h <host-server> -o <report-file>
 ```
+
+## Lynis: Linux security auditing tools
+
+**Lynis** is a battle-tested security tool for systems running Linux, macOS, or Unix-based operating system. It performs an extensive health scan of your systems to support system hardening and compliance testing.
+
+1. [Lynis](https://www.geeksforgeeks.org/lynis-security-tool-for-audit-and-hardening-linux-systems/)
+2. [Create a HTML report](https://cisofy.com/faq/can-lynis-create-a-html-report/)
+2. [Frequently Asked Questions](https://cisofy.com/faq/)
+
+With the command `sudo lynis audit system` we can see all the recommendations and suggestions that lynis gives us to improve the security of our system.
+
+```bash
+# Search packages available
+$ sudo apt search lynis
+
+# Install lynis
+$ sudo apt install lynis
+
+$ sudo lynis audit system
+
+# Install ansi2html
+$ yum install python-ansi2html (CenTOS)
+$ sudo apt install kbtin (Debian)
+
+$ sudo lynis audit system | ansi2html -la > report.html
+```
+
+1. [openSCAP](hthttps://www.open-scap.org/) (Second option)
+2. [Security Auditing and Compliance Solutions](https://cisofy.com/)
 
 ## Licencia
 
