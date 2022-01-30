@@ -128,7 +128,7 @@ $ w
 
 ```
 
-### Find out information
+## Find out information
 
 1. [who](https://www.geeksforgeeks.org/who-command-in-linux/)
 
@@ -146,7 +146,7 @@ $ who -q
 
 ```
 
-### Processes on a system
+## Processes on a system
 
 1. [ps](https://www.geeksforgeeks.org/ps-command-in-linux-with-examples/?ref=gcse)
 
@@ -178,7 +178,7 @@ $ ps -ft tty1
 
 ```
 
-### Kill processes
+## Kill processes
 
 1. [kill](https://www.geeksforgeeks.org/kill-command-in-linux-with-examples/?ref=gcse)
 
@@ -189,7 +189,7 @@ $ kill -9 <number_process>
 
 ```
 
-### Text editors
+## Text editors
 
 1. [vi editor](https://www.geeksforgeeks.org/vi-editor-unix/?ref=gcse)
 
@@ -229,7 +229,7 @@ $ ./script.sh & # keep console
 $ nohup ./script.sh & # Generate exit called  nohup.out
 ```
 
-### Monitoring system resources
+## Monitoring system resources
 
 1. [top](https://www.geeksforgeeks.org/top-command-in-linux-with-examples/?ref=gcse)
 2. [htop](https://www.geeksforgeeks.org/htop-command-in-linux-with-examples/?ref=gcse)
@@ -270,7 +270,7 @@ $ sudo ps auxf | sort -nr -k 4
 $ sudo ps auxf | sort -nr -k 4 | head -5
 ```
 
-### Network parameters analysis
+## Network parameters analysis
 
 1. [ifconfig](https://www.geeksforgeeks.org/ifconfig-command-in-linux-with-examples/?ref=gcse)
 2. [ip](https://www.geeksforgeeks.org/ip-command-in-linux-with-examples/?ref=gcse)
@@ -515,7 +515,7 @@ Content `time.conf` (Example to limit schedule)
 ...
 ```
 
-### SSH Command
+## SSH Command
 
 SSH is a protocol that help us connect to our servers 
 
@@ -561,7 +561,7 @@ $ ssh localhost
 
 ```
 
-### Configure DNS with `bind`
+## Configure DNS with `bind`
 
 1. [bind](https://www.geeksforgeeks.org/bind-command-in-linux-with-examples/?ref=gcse)
 2. [netstat](https://www.geeksforgeeks.org/netstat-command-linux/?ref=gcse)
@@ -618,7 +618,7 @@ $ sudo journalctl -o json
 
 ```
 
-### NGINX and NGINX Amplify
+## NGINX and NGINX Amplify
 
 A practical guide to how Kubernetes traffic management tools – including an Ingress controller and service mesh – can help you solve the challenges of resilience, visibility, and security that come with running Kubernetes in production.
 
@@ -628,7 +628,7 @@ NGINX Amplify is a free, SaaS based monitoring tool for NGINX Open Source and NG
 
 1. [NGINX Amplify](https://www.nginx.com/products/nginx-amplify/)
 
-### MySQL monitoring with Nagios
+## MySQL monitoring with Nagios
 
 1. [MySQL](https://likegeeks.com/mysql-on-linux-beginners-tutorial/)
 
@@ -695,7 +695,7 @@ $ tar xzvf mysqlplugin.tar.gz
 
 ``` 
 
-### Nagios Configuration
+## Nagios Configuration
 
 Already in the MySQL console, create a user
 
@@ -754,9 +754,9 @@ Restart `Nagios`
 $ sudo systemctl restart nagios
 ```
 
-### Logs
+## Logs
 
-#### FIND
+### FIND
 
 It helps us to search for files and/or folders in the operating system. We can filter by file type with -type, by name with -name, case-insensitive with -i, by modification date with -mtime, among others.
 
@@ -767,7 +767,7 @@ $ find /var/log -name "*.log" -type f
 $ find /var/log -iname "*.LOG" -type f
 ```
 
-#### GREP
+### GREP
 
 It helps us filter the output of a command or file based on the words on each line.
 
@@ -776,7 +776,7 @@ $ grep "server" /etc/nginx/sites-available/default
 $ ps aux | grep plazi
 ```
 
-#### AWK
+### AWK
 
 It is a scripting language that helps us process information using patterns to filter, rearrange, and format our data.
 
@@ -785,7 +785,7 @@ $ awk '{print $1}' /var/log/nginx/access.log
 $ awk '{print $1}' /var/log/nginx/access.log | sort | uniq -c | sort -nr
 ```
 
-#### Tools
+### Tools
 
 1. [Collectd](https://collectd.org/)
 2. [Collectd plugins](https://collectd.org/wiki/index.php/Table_of_Plugins)
@@ -793,12 +793,12 @@ $ awk '{print $1}' /var/log/nginx/access.log | sort | uniq -c | sort -nr
 4. [Munin](https://munin-monitoring.org/)
 5. [Grafana](https://grafana.com/)
 
-#### Monitoring agents
+### Monitoring agents
 
 1. [New Relic](https://newrelic.com/)
 2. [Data dog](https://www.datadoghq.com/)
 
-### Variables and their execution environment
+## Variables and their execution environment
 
 Version one
 
@@ -834,7 +834,7 @@ df -h | grep /dev/sda2 >> disk_use_"$DATE_VARIABLE".txt
 echo "A file named disk_use_$DATE_VARIABLE.txt has been generated in the location $CWD" 
 ```
 
-### Automating tasks from the terminal
+## Automating tasks from the terminal
 
 Make backup
 
@@ -981,7 +981,7 @@ function restore_backup {
 }
 ```
 
-### Crontab
+## Crontab
 
 [Crontab](https://www.tutorialspoint.com/unix_commands/crontab.htm)
 
@@ -1021,6 +1021,16 @@ yum update security
 apt-get update
 apt-get upgrade
 ```
+
+## Attack surface. Principle of least privilege
+
+The **Attack Surface** is the set of vulnerabilities or known data that can be exploited by a computer attacker. Each service of our applications is a new entry point to our network. We must not only protect our servers, we must also protect all the services that run on it.
+
+`Lynis` is a tool that analyzes our servers and to give us some recommendations. There are also frameworks or manuals such as `OWASP` that explain the characteristics of vulnerable web applications and how to program them safely.
+
+1. [Attack Surface](https://www.sciencedirect.com/topics/computer-science/attack-surface)
+2. [Lynis](https://www.geeksforgeeks.org/lynis-security-tool-for-audit-and-hardening-linux-systems/)
+3. [OWASP](https://owasp.org/)
 
 ## Licencia
 
