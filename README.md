@@ -1074,7 +1074,31 @@ $ sudo ufw reset
 2. [Setting up and Securing Ubuntu server with a Basic Firewall](https://www.geeksforgeeks.org/setting-up-and-securing-ubuntu-server-with-a-basic-firewall/?ref=gcse)
 3. [Anonymity and Privacy For Linux User](https://www.geeksforgeeks.org/anonymity-and-privacy-for-linux-user/?ref=gcse)
 
+## Port scanning with NMAP and NIKTO from Kali Linux
 
+**Nmap** (Network Mapper) is a network scanner created by Gordon Lyon (also known by his pseudonym Fyodor Vaskovich). Nmap is used to discover hosts and services on a computer network by sending packets and analyzing the responses.
+
+**Nikto** is a free software command-line vulnerability scanner that scans webservers for dangerous files/CGIs, outdated server software and other problems. It performs generic and server type specific checks. It also captures and prints any cookies received. 
+
+**Kali Linux** is a Debian-derived Linux distribution designed for digital forensics and penetration testing. It is maintained and funded by Offensive Security.
+
+1. [Nmap](https://www.geeksforgeeks.org/how-to-use-nmap-script-engine-nse-scripts-in-linux/?ref=gcse)
+2. [Nikto](https://www.geeksforgeeks.org/what-is-nikto-and-its-usages/?ref=gcse)
+3. [How to Scan Vulnerabilities using Nikto](https://www.geeksforgeeks.org/how-to-scan-vulnerabilities-of-websites-using-nikto-in-linux/?ref=gcse)
+4. [Penetration Testing Tools in Kali Tools](https://www.geeksforgeeks.org/gobuster-penetration-testing-tools-in-kali-tools/?ref=gcse)
+5. [How to Install Social Engineering Toolkit in Kali Linux](https://www.geeksforgeeks.org/how-to-install-social-engineering-toolkit-in-kali-linux/?ref=gcse)
+6. [Hunting for low-hanging fruits in Kali Linux](https://www.geeksforgeeks.org/xsstrike-hunting-for-low-hanging-fruits-in-kali-linux/?ref=gcse)
+
+
+```bash
+# Scan all ports
+$ nmap -sV -sC -p-
+# Scan specific operating systems (-O) and save result (-oA)
+$ nmap -sV -sC -O -oA <result-file> <ip-server>
+
+# Scan for additional information
+$ ninkto -h <host-server> -o <result-file>
+```
 
 ## Licencia
 
