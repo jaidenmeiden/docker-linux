@@ -32,6 +32,7 @@ $ apt install vi
 $ apt install less
 $ apt install man
 $ apt install systemctl
+$ apt install ufw
 
 # Linux console font and keytable utilities (chvt)
 $ apt install kbd
@@ -1031,6 +1032,49 @@ The **Attack Surface** is the set of vulnerabilities or known data that can be e
 1. [Attack Surface](https://www.sciencedirect.com/topics/computer-science/attack-surface)
 2. [Lynis](https://www.geeksforgeeks.org/lynis-security-tool-for-audit-and-hardening-linux-systems/)
 3. [OWASP](https://owasp.org/)
+
+## The firewall and its rules
+
+**Firewalls** are tools that monitor the traffic on our networks to identify threats and prevent them from affecting our system.
+
+Remember that computer security is a constant process, so no tool (including the firewall) can guarantee absolute security.
+
+In Ubuntu Server we can use `ufw` (_Uncomplicated Firewall_) to create some rules, verify the ports that we have open and carry out a basic protection of our system:
+
+* `sudo ufw (enable, reset, status)`: enable, disable or view the status and rules of our firewall.
+* `sudo ufw allow <port-number>`: Allow access through a specific port. Remember that port 22 is where we work with SSH.
+* `sudo ufw status numbered`: see the number of our rules.
+* `sudo ufw delete <rule-number>`: delete some of our rules.
+* `sudo ufw allow from <ip-number> proto tcp to any port <port-number>`: restrict the access of a service through any of its ports to only a limited number of specific IPs.
+
+```bash
+$ sudo ufw status
+
+# Allow port 22 to SSH
+$ sudo ufw allow 22 comment 'ssh'
+
+# Enable rules
+$ sudo ufw enable
+
+# Show rules
+$ sudo ufw status
+$ sudo ufw status numbered
+
+# Delete rule
+$ sudo ufw delete <rule-number>
+
+# Allow access to specific IP
+$ sudo ufw allow from <ip-number> proto tcp to any port <port-number> comment 'Allow ssh IP'
+
+# Remove rules
+$ sudo ufw reset
+
+```
+1. [How to setup firewall in Linux?](https://www.geeksforgeeks.org/how-to-setup-firewall-in-linux/?ref=gcse)
+2. [Setting up and Securing Ubuntu server with a Basic Firewall](https://www.geeksforgeeks.org/setting-up-and-securing-ubuntu-server-with-a-basic-firewall/?ref=gcse)
+3. [Anonymity and Privacy For Linux User](https://www.geeksforgeeks.org/anonymity-and-privacy-for-linux-user/?ref=gcse)
+
+
 
 ## Licencia
 
