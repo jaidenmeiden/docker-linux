@@ -701,7 +701,7 @@ $ tar xzvf mysqlplugin.tar.gz
 Already in the MySQL console, create a user
 
 ```MySQL
-GRANTSELECTON *.* TO'nagios'@'localhost'IDENTIFIEDBY'nagiosplatziS14*';
+GRANTSELECTON *.* TO'nagios'@'localhost'IDENTIFIEDBY'nagios*';
 FLUSHPRIVILEGES; 
 ```
 
@@ -746,7 +746,7 @@ define service {
 	use local-service
 	host_name localhost
 	service_description MySQL connection-time
-	check_command check_mysql_health!nagios!nagiosplatziS14*!connection-time!127.0.0.1!3306!
+	check_command check_mysql_health!nagios!nagios*!connection-time!127.0.0.1!3306!
 }
 ```
 
@@ -774,7 +774,7 @@ It helps us filter the output of a command or file based on the words on each li
 
 ```bash
 $ grep "server" /etc/nginx/sites-available/default
-$ ps aux | grep plazi
+$ ps aux | grep <string>
 ```
 
 ### AWK
@@ -1123,11 +1123,69 @@ $ sudo lynis audit system
 $ yum install python-ansi2html (CenTOS)
 $ sudo apt install kbtin (Debian)
 
-$ sudo lynis audit system | ansi2html -la > report.html
+$ sudo lynis audit system | ansi2html > report.html
 ```
 
 1. [openSCAP](hthttps://www.open-scap.org/) (Second option)
 2. [Security Auditing and Compliance Solutions](https://cisofy.com/)
+
+## Node.js configuration in a production environment
+
+Installing Node.js:
+```bash
+$ sudo apt install nodejs npm
+```
+Download and install Node.js version 10:
+
+```bash
+$ curl -sL https://deb.nodesource.com/setup_10.x -o node_setup.sh
+$ sudo bash node_setup.sh
+$ sudo apt-get install gcc g++ make
+$ sudo apt-get install -y nodejs
+```
+
+Creating a user to handle Node.js processes:
+
+```bash
+$ sudo adduser nodejs
+```
+
+Create the `/lib/systemd/system/my_service@.service` script for the Node.js service to start with the operating system:
+
+```vi
+[Unit]
+Description=Load balancing
+Documentation=https://github.com/jaidenmeiden/node-server
+After=network.target
+
+[Service]
+Environment=PORT=%i
+Type=simple
+User=nodejs
+WorkingDirectory=/home/nodejs/node-server
+ExecStart=/usr/bin/node /home/nodejs/node-server/server.js
+Restart-on=failure
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Content `server.js`
+```javascript
+'use strict'
+
+const http = require('http')
+const port = process.env.PORT || 3000
+const server = http.createServer(requestHandler)
+
+function requestHandler ( req , res) {
+   res.writeHead(200, {"Content-Type": "text/plain; charset=utf-8"});
+   res.write(`The server is running with pid ${process.pid} and in the port ${port}` , "utf-8");
+   res.end()
+}
+
+server.listen(port, () => console.log(`Server running on the port ${port}`) ) 
+```
 
 ## Licencia
 
