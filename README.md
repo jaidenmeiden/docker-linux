@@ -1187,6 +1187,47 @@ function requestHandler ( req , res) {
 server.listen(port, () => console.log(`Server running on the port ${port}`) ) 
 ```
 
+```bash
+# Verify port 80
+$ sudo netstat -tulpn
+
+# Cerify if service is working
+$ sudo systemctl status node-server@
+$ sudo systemctl status node-server@3000.service
+
+# Review NGINX files
+$ sudo vi /etc/nginx/sites-available/default
+$ cd /etc/nginx/sites-available
+$ ls -l
+$ sudo truncate -s0 default
+$ ls -l
+$ vi default
+```
+
+Content `default` from `/etc/nginx/sites-available/default`
+```vi
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    server_name_;
+
+    location / {
+        proxy_set_header X-Forwarded-For $proxy_add_x_frowarded_for;
+        proxy_set_header Host $host;
+        proxy_http_version 1.1;
+        proxy_pass http://backend;
+    }
+}
+
+upstream backend {
+    server 127.0.0.1:3000;
+    server 127.0.0.1:3001;
+    server 127.0.0.1:3002;
+    server 127.0.0.1:3003;
+}
+```
+
 ## Licencia
 
 Copyright © 2021 JaidenMeiden.
