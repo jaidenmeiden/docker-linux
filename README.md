@@ -1001,6 +1001,27 @@ crontab is the program used to install, deinstall or list the tables used to dri
 Min ( 0 - 59 )
 ```
 
+## Vulnerability management
+
+There are some commands that we should not use, since they are vulnerable by default, such as `telnet` or `r*` commands. Instead of these commands we can use secure protocols like SSH.
+
+We must keep in mind what are the open services and ports of our operating system. We must also be very careful with user permissions.
+
+To check for security updates and install them on our machine we can use the following commands:
+
+1. [CVE Details](https://www.cvedetails.com/)
+2. [Browse Vulnerabilities By Date](https://www.cvedetails.com/browse-by-date.php)
+
+```bash
+# CentOS
+yum check-update --security
+yum update security
+
+# Ubuntu
+apt-get update
+apt-get upgrade
+```
+
 ## Licencia
 
 Copyright © 2021 JaidenMeiden.
