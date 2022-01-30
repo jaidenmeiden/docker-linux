@@ -1150,7 +1150,7 @@ Creating a user to handle Node.js processes:
 $ sudo adduser nodejs
 ```
 
-Create the `/lib/systemd/system/my_service@.service` script for the Node.js service to start with the operating system:
+Create the `/lib/systemd/system/node-server@.service` script for the Node.js service to start with the operating system:
 
 ```vi
 [Unit]
